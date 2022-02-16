@@ -18,6 +18,7 @@
        $query = "SELECT * FROM `users` WHERE `email` = '$email' AND `password` = '$password'";
        $run_fetch = mysqli_query($con, $query);
        $noofrow = mysqli_num_rows($run_fetch);
+       //code for account ban
        if ($noofrow > 0 && $run_fetch == true) { 
           $data = mysqli_fetch_assoc($run_fetch); 
           if ($data['is_ban'] == 1) { 
